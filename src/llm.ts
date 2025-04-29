@@ -4,7 +4,6 @@ import { zodFunction } from 'openai/helpers/zod';
 
 import { systemPrompt as defaultSystemPrompt } from './systemPrompt';
 
-
 export const runLLM = async ({
     messages,
     tools = [],
@@ -25,6 +24,7 @@ export const runLLM = async ({
         {
           role: 'system',
           content: systemPrompt || defaultSystemPrompt,
+          name: 'Gepeto'
         },
         ...messages,
       ],
@@ -33,7 +33,9 @@ export const runLLM = async ({
         tool_choice: 'auto',
         parallel_tool_calls: false,
       }),
-    })
+    });
+
+    console.log(response.usage, 'usage');
   
     return response.choices[0].message
   }

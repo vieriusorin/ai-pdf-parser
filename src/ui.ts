@@ -18,8 +18,8 @@ export const showLoader = (text: string) => {
 
 export const logMessage = (message: AIMessage) => {
   const roleColors = {
-    user: '\x1b[36m', // cyan
-    assistant: '\x1b[32m', // green
+    user: '\x1b[36m',
+    assistant: '\x1b[32m',
   }
 
   const reset = '\x1b[0m'
@@ -47,13 +47,13 @@ export const logMessage = (message: AIMessage) => {
         console.log(`${tool.function.name}\n`)
 
         if (tool.function.name === pdfParseToolDefinition.name) {
-          console.log('\nDo you approve scrapping the pdf? (yes/no)\n')
+          console.log('\nDo you approve scanning the pdf? (yes/no)\n')
         }
       })
       return
     }
 
-    // If has content, log it
+
     if (message.content) {
       console.log(`\n${color}[ASSISTANT]${reset}`)
       console.log(`${message.content}\n`)
