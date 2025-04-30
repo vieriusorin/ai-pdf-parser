@@ -1,6 +1,3 @@
-import { pdfParseToolDefinition } from './pdf-parse'
+import { pdfParseToolDefinition } from "./pdf-parse";
 
-export const tools = [
-    pdfParseToolDefinition,
-]
-
+export const tools = [pdfParseToolDefinition];
